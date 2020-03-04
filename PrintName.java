@@ -8,7 +8,7 @@ public class PrintName implements IArithmeticsDiff{
         System.out.println("Developer BartoszKowalczyk98");
     }
 
-    @Override
+      @Override
     public double Difference(double A, double B) {
         return A-B;
     }
