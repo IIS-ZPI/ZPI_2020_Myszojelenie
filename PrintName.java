@@ -1,4 +1,5 @@
-public class PrintName implements IArithmeticsDiff{
+public class PrintName implements IArithmeticsDiv, IArithmeticsDiff{
+
     public static void main(String[] args) {
 
         System.out.println("Myszojelenie Operations snapeeek");
@@ -8,8 +9,17 @@ public class PrintName implements IArithmeticsDiff{
         System.out.println("Developer BartoszKowalczyk98");
     }
 
+    @Override
+    public double Division(double A, double B) {
+        if(A==0||B==0){
+            throw new ArithmeticException();
+        }
+        return A/B;
+        }
+        
       @Override
     public double Difference(double A, double B) {
         return A-B;
+
     }
 }
