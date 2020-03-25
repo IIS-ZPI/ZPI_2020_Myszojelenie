@@ -5,9 +5,9 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
 
         System.out.println("Myszojelenie Operations snapeeek");
         System.out.println("Developer AdamWojtczak");
-        System.out.println("Tester AndrzejBilant");
+        System.out.println("Tester AndrzejBilant");//Andrzej RachunekMrowka drugi komentarza adamwojtczak
         System.out.println("Operations Snapeeek");
-        System.out.println("Developer BartoszKowalczyk98");
+        System.out.println("Developer BartoszKowalczyk98");//komentarz uno AdamWojtczak
     }
     /*
     * Był ostatnio zaobserwowany w Wietnamie
@@ -17,7 +17,7 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
     @Override
     public double Addition(double A, double B) {//Parostatkiem w piękny rejs, statkiem na parę w piękny rejs
         return A + B;
-    }
+    } //konentarz zadanie 6
 
     @Override
     public double Multiplication(double A, double B) {
