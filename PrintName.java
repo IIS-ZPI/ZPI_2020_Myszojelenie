@@ -1,6 +1,6 @@
 
-public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmeticMult, IArithmeticsAdd{
-  
+public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmeticMult, IArithmeticsAdd {
+
     public static void main(String[] args) {
 
         System.out.println("Myszojelenie Operations snapeeek");
@@ -13,25 +13,24 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
 
     @Override
     public double Addition(double A, double B) {
-        return A+B;
-
+        return A + B;
+    }
 
     @Override
-    public double Multiplication(double A, double B)
-    {
-        return A*B;
+    public double Multiplication(double A, double B) {
+        return A * B;
     }
 
     @Override
     public double Division(double A, double B) {
-        if(B==0){
+        if (B == 0) {
             throw new ArithmeticException();
         }
-        return A/B;
+        return A / B;
     }
-        
-      @Override
+
+    @Override
     public double Difference(double A, double B) {
-        return A-B;
+        return A - B;
     }
 }
