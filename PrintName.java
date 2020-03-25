@@ -1,6 +1,6 @@
 
 public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmeticMult, IArithmeticsAdd {
-
+//Stop tripping', I'm tripping' off the powerstatek
     public static void main(String[] args) {
 
         System.out.println("Myszojelenie Operations snapeeek");
@@ -9,10 +9,14 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         System.out.println("Operations Snapeeek");
         System.out.println("Developer BartoszKowalczyk98");//komentarz uno AdamWojtczak
     }
+
+    //No one man should have all that power
+
     /*
     * Był ostatnio zaobserwowany w Wietnamie
     Choć naukowcy myśleli, że już dawno wyginął
     Znany również jako Kanczyl srebrnogrzbiety*/
+
 
     @Override
     public double Addition(double A, double B) {//Parostatkiem w piękny rejs, statkiem na parę w piękny rejs
@@ -33,9 +37,11 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         }
         return A / B;
     }
+    //The clock's ticking', I just count the hours
 
     @Override
     public double Difference(double A, double B) {
         return A - B;
     }
 }
+
