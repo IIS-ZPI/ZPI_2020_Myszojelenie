@@ -2,12 +2,14 @@
 public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmeticMult, IArithmeticsAdd {
 
     public static void main(String[] args) {
-
+        //ok
         System.out.println("Myszojelenie Operations snapeeek");
         System.out.println("Developer AdamWojtczak");
+        //now it's better
         System.out.println("Tester AndrzejBilant");
         System.out.println("Operations Snapeeek");
         System.out.println("Developer BartoszKowalczyk98");
+        //at least i think
     }
 
 
