@@ -5,9 +5,12 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
 
         System.out.println("Myszojelenie Operations snapeeek");
         System.out.println("Developer AdamWojtczak");
+        //plz
         System.out.println("Tester AndrzejBilant");
         System.out.println("Operations Snapeeek");
+        //what am i even doing
         System.out.println("Developer BartoszKowalczyk98");
+        //halp me
     }
 
 
