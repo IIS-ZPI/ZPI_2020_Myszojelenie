@@ -1,4 +1,5 @@
-public class PrintName implements IArithmeticsAdd{
+
+public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmeticMult, IArithmeticsAdd{
   
     public static void main(String[] args) {
 
@@ -9,8 +10,28 @@ public class PrintName implements IArithmeticsAdd{
         System.out.println("Developer BartoszKowalczyk98");
     }
 
+
     @Override
     public double Addition(double A, double B) {
         return A+B;
+
+
+    @Override
+    public double Multiplication(double A, double B)
+    {
+        return A*B;
+    }
+
+    @Override
+    public double Division(double A, double B) {
+        if(B==0){
+            throw new ArithmeticException();
+        }
+        return A/B;
+    }
+        
+      @Override
+    public double Difference(double A, double B) {
+        return A-B;
     }
 }
