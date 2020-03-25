@@ -28,6 +28,7 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         }
         return A / B;
     }
+    //The clock's ticking', I just count the hours
 
     @Override
     public double Difference(double A, double B) {
