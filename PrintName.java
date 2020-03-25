@@ -1,6 +1,6 @@
 
 public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmeticMult, IArithmeticsAdd {
-
+//Stop tripping', I'm tripping' off the powerstatek
     public static void main(String[] args) {
 
         System.out.println("Myszojelenie Operations snapeeek");
@@ -34,4 +34,4 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         return A - B;
     }
 }
-//No one man should have all that power
+
