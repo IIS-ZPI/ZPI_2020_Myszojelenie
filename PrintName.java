@@ -34,4 +34,3 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         return A - B;
     }
 }
-//No one man should have all that power
