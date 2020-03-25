@@ -9,10 +9,13 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         System.out.println("Operations Snapeeek");
         System.out.println("Developer BartoszKowalczyk98");
     }
-
+    /*
+    * Był ostatnio zaobserwowany w Wietnamie
+    Choć naukowcy myśleli, że już dawno wyginął
+    Znany również jako Kanczyl srebrnogrzbiety*/
 
     @Override
-    public double Addition(double A, double B) {
+    public double Addition(double A, double B) {//Parostatkiem w piękny rejs, statkiem na parę w piękny rejs
         return A + B;
     }
 
@@ -20,7 +23,9 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
     public double Multiplication(double A, double B) {
         return A * B;
     }
-
+    /* Ma ma ma ma ma małe nóżki
+    A do tego duży tułów
+    Ma kopytka i twarz jak gryzoń */
     @Override
     public double Division(double A, double B) {
         if (B == 0) {
