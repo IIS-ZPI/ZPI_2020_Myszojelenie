@@ -20,7 +20,9 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
     public double Multiplication(double A, double B) {
         return A * B;
     }
-
+    /* Ma ma ma ma ma małe nóżki
+    A do tego duży tułów
+    Ma kopytka i twarz jak gryzoń */
     @Override
     public double Division(double A, double B) {
         if (B == 0) {
