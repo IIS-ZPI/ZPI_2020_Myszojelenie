@@ -10,7 +10,7 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         System.out.println("Developer BartoszKowalczyk98");
     }
 
-    //Parostatek był ostatnio zaobserwowany w Warszawie
+
     @Override
     public double Addition(double A, double B) {
         return A + B;
