@@ -14,7 +14,7 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
     @Override
     public double Addition(double A, double B) {
         return A + B;
-    }
+    } //konentarz zadanie 6
 
     @Override
     public double Multiplication(double A, double B) {
