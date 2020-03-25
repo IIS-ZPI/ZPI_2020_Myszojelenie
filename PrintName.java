@@ -8,6 +8,7 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         System.out.println("Tester AndrzejBilant");
         System.out.println("Operations Snapeeek");
         System.out.println("Developer BartoszKowalczyk98");
+        //i still dont' know really
     }
 
 
