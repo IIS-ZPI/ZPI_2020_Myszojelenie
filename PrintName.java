@@ -9,7 +9,7 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         System.out.println("Operations Snapeeek");
         System.out.println("Developer BartoszKowalczyk98");
     }
-
+    //No one man should have all that power
 
     @Override
     public double Addition(double A, double B) {
@@ -34,4 +34,4 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
         return A - B;
     }
 }
-//No one man should have all that power
+
