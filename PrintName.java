@@ -23,7 +23,7 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff, IArithmetic
 
     @Override
     public double Division(double A, double B) {
-        if (B == 0) {
+        if (B == 0) {//I'm living' in that 21st century
             throw new ArithmeticException();
         }
         return A / B;
