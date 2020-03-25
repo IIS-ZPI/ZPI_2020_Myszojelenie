@@ -11,15 +11,14 @@ public class PrintName implements IArithmeticsDiv, IArithmeticsDiff{
 
     @Override
     public double Division(double A, double B) {
-        if(A==0||B==0){
+        if(B==0){
             throw new ArithmeticException();
         }
         return A/B;
-        }
+    }
         
       @Override
     public double Difference(double A, double B) {
         return A-B;
-
     }
 }
