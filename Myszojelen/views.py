@@ -1,24 +1,22 @@
-from django.forms import modelform_factory
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+from .forms import *
 
 from .models import *
 
 
-# Create your views here.
-
 def index(request):
-    stany = State.objects.all()
-    produkty = Product.objects.all()
-
     zysk = None
     if request.method == 'POST':
         data = request.POST.copy()
-        stan = data.get('id_state')
-        produkt = data.get('id_product')
-
         selling_price = float(data.get('selling_price'))
-        product_price = produkty[int(produkt) - 1].product_price
-        tax = stany[int(stan) - 1].state_base_tax
+        state = State_Category_Tax.objects.filter(id_cat=int(data.get('id_cat')),
+                                                  id_state=int(data.get('id_state')))
+        product_price = float(data.get('product_price'))
+        if state.exists():
+            tax = state[0].tax_val
+        else:
+            stan = State.objects.get(id=int(data.get('id_state')))
+            tax = stan.state_base_tax
 
         zysk = round((selling_price - product_price * (1 + tax)) / (1 + tax), 4)
 
@@ -26,5 +24,10 @@ def index(request):
 
 
 def adding_form(request):
-    form = modelform_factory(FormInfoHandler, fields='__all__')
-    return render(request, 'Myszojelen/adding.html', {"formset": form})
+    forminfo = FormInfoHandlerModelForm
+    formprod = FormProductModelForm
+    context = {
+        "forminfo": forminfo,
+        "formprod": formprod,
+    }
+    return render(request, 'Myszojelen/adding.html', context)
