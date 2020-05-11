@@ -12,8 +12,29 @@
 </head>
 <body>
 <a class="btn btn-primary" href="adding/">Oblicz</a>
-{% if zysk is not None %}
-    {{ zysk }}$
-{% endif %}
+<table class="table">
+    <thead>
+    <tr>
+        <th>Stan</th>
+        <th>Kategoria</th>
+        <th>Produkt</th>
+        <th>Cena jednostkowa</th>
+        <th>Cena sprzedaży</th>
+        <th>Zysk</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for element in display_list %}
+        <tr>
+            <td>{{ element.state_name }}</td>
+            <td>{{ element.category_name }}</td>
+            <td>{{ element.product_name }}</td>
+            <td>{{ element.product_unit_price }}</td>
+            <td>{{ element.product_selling_price }}</td>
+            <td>{{ element.calculated_price }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 </body>
 </html>
