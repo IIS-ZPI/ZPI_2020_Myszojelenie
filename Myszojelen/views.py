@@ -31,6 +31,7 @@ def index(request):
                                prounipr=product_price,
                                proselpri=selling_price,
                                calpri=zysk))
+        list_of_calculation_holders.sort()
 
     return render(request, "Myszojelen/index.html", context)
 
