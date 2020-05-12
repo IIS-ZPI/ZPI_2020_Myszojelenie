@@ -4,7 +4,7 @@ from .forms import *
 from .models import *
 from .calculations_holder import CalculationsHolder
 
-list_of_calculation_holders: CalculationsHolder = []
+list_of_calculation_holders = []
 
 
 def index(request):
