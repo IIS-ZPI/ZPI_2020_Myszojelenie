@@ -1,13 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="/" method="POST">
-    {% csrf_token %}
-    <table class="table">
-        {{ forminfo.as_table }}
-        {{ formprod.as_table }}
-    </table>
-    <input type="submit" class="btn btn-success">
-    <input type="reset" class="btn btn-danger">
-    <a type="button" class="btn btn-primary" href="/">Wróć</a>
-</form>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+    {{ forminfo.media.js }}
+    {{ forminfo.media.css }}
+    <form action="/" method="POST">
+        {% csrf_token %}
+        <table class="table">
+{#            <select class="js-example-basic-multiple" name="states[]" multiple="multiple">#}
+{#                #}
+{#            </select>#}
+
+            {{ forminfo.as_table }}
+            {{ formprod.as_table }}
+        </table>
+        <input type="submit" class="btn btn-success">
+        <input type="reset" class="btn btn-danger">
+        <a type="button" class="btn btn-primary" href="/">Wróć</a>
+    </form>
 {% endblock %}
