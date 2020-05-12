@@ -16,6 +16,8 @@ def index(request):
         print(data.get('id_state'))
         xdicktionary = dict(data.lists())
         for stateid in xdicktionary.get('id_state'):
+            if stateid == '':
+                continue
             selling_price = float(data.get('selling_price'))
             state = State_Category_Tax.objects.filter(id_cat=int(data.get('id_cat')),
                                                       id_state=int(stateid))

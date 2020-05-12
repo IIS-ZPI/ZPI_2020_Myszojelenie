@@ -10,10 +10,6 @@
     <form action="/" method="POST">
         {% csrf_token %}
         <table class="table">
-{#            <select class="js-example-basic-multiple" name="states[]" multiple="multiple">#}
-{#                #}
-{#            </select>#}
-
             {{ forminfo.as_table }}
             {{ formprod.as_table }}
         </table>
