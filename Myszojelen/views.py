@@ -13,8 +13,10 @@ def index(request):
     }
     if request.method == 'POST':
         data = request.POST.copy()
-        print(data.get('id_state'))
         xdicktionary = dict(data.lists())
+        amount = int(xdicktionary.get('ilosc'))
+        if amount < 0:
+            amount = 0
         for stateid in xdicktionary.get('id_state'):
             if stateid == '':
                 continue
@@ -31,6 +33,7 @@ def index(request):
                 state_name = stan.state_name
                 tax = stan.state_base_tax
             category = Category.objects.get(id=int(data.get('id_cat')))
+            # todo dolozyc amount do wzoru na zysk
             zysk = round((selling_price - product_price * (1 + tax)) / (1 + tax), 4)
             list_of_calculation_holders.append(
                 CalculationsHolder(state=state_name,
@@ -47,8 +50,10 @@ def index(request):
 def adding_form(request):
     forminfo = FormInfoHandlerModelForm
     formprod = FormProductModelForm
+    formamount = FormAmountForm
     context = {
         "forminfo": forminfo,
         "formprod": formprod,
+        "formamout": formamount,
     }
     return render(request, 'Myszojelen/adding.html', context)

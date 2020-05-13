@@ -1,5 +1,7 @@
+from django.core.validators import MinValueValidator
+
 from .models import FormInfoHandler, Product
-from django.forms import ModelForm
+from django.forms import *
 from django_select2 import forms as s2forms
 
 
@@ -16,3 +18,5 @@ class FormProductModelForm(ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+class FormAmountForm(Form):
+    ilosc = IntegerField(validators=[MinValueValidator(0)])
