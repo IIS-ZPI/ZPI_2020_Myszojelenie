@@ -52,3 +52,10 @@ def adding_form(request):
         "formprod": formprod,
     }
     return render(request, 'Myszojelen/adding.html', context)
+
+
+def removerecord(request, pk):
+    if request.method == 'POST':
+        list_of_calculation_holders.pop(int(pk))
+    request.method = 'GET'
+    return index(request)
