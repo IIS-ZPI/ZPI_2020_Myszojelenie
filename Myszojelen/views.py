@@ -33,8 +33,7 @@ def index(request):
                 state_name = stan.state_name
                 tax = stan.state_base_tax
             category = Category.objects.get(id=int(data.get('id_cat')))
-            # todo dolozyc amount do wzoru na zysk
-            zysk = round((selling_price - product_price * (1 + tax)) / (1 + tax), 4)
+            zysk = round(amount * (selling_price - product_price * (1 + tax)) / (1 + tax), 4)
             list_of_calculation_holders.append(
                 CalculationsHolder(state=state_name,
                                    cat=category.category_name,
