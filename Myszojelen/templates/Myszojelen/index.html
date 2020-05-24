@@ -6,7 +6,7 @@
         });
     </script>
 
-    <a class="btn btn-primary" href="adding">Oblicz</a>
+    <a class="btn btn-primary" href="/adding">Oblicz</a>
     <table id="sortabletable" class="table table-striped table-bordered table-sm">
         <thead>
         <tr>
@@ -27,6 +27,12 @@
                 <td>{{ element.product_unit_price }}</td>
                 <td>{{ element.product_selling_price }}</td>
                 <td>{{ element.calculated_price }}</td>
+                <td>
+                    <form action="/removed/{{ element.id }}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Usun" class="btn btn-danger">
+                    </form>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

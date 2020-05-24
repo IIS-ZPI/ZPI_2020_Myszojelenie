@@ -55,6 +55,10 @@ def index(request):
                                    calpri=zysk))
             list_of_calculation_holders.sort()
 
+    iter_helper = 0
+    for element in list_of_calculation_holders:
+        element.setid(iter_helper)
+        iter_helper += 1
     return render(request, "Myszojelen/index.html", context)
 
 
@@ -68,3 +72,10 @@ def adding_form(request):
         "formamout": formamount,
     }
     return render(request, 'Myszojelen/adding.html', context)
+
+
+def removerecord(request, pk):
+    if request.method == 'POST':
+        list_of_calculation_holders.pop(int(pk))
+    request.method = 'GET'
+    return index(request)
