@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '18p)g15efik%#_*zg9vxom+3c0o5jspwpcz11ff*a)5a&n#u62'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['snapeeek.pythonanywhere.com']
 
