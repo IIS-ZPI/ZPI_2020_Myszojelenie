@@ -16,6 +16,7 @@
             <th>Cena jednostkowa</th>
             <th>Cena sprzedaży</th>
             <th>Zysk</th>
+            <th>Ilość</th>
             <th></th>
         </tr>
         </thead>
@@ -28,6 +29,7 @@
                 <td>{{ element.product_unit_price }}</td>
                 <td>{{ element.product_selling_price }}</td>
                 <td>{{ element.calculated_price }}</td>
+                <td>{{ element.amount }}</td>
                 <td>
                     <form action="/removed/{{ element.id }}" method="post">
                         {% csrf_token %}
