@@ -14,7 +14,7 @@ def index(request):
     if request.method == 'POST':
         data = request.POST.copy()
         xdicktionary = dict(data.lists())
-        amount = int(xdicktionary.get('ilosc'))
+        amount = int(data.get('ilosc'))
         if amount < 0:
             amount = 0
         for stateid in xdicktionary.get('id_state'):
@@ -33,6 +33,18 @@ def index(request):
                 state_name = stan.state_name
                 tax = stan.state_base_tax
             category = Category.objects.get(id=int(data.get('id_cat')))
+
+            if category.category_name == 'Clothing':
+                if state.state_name == 'Massachusetts':
+                    if selling_price * amount > 175:
+                        tax = state.state_base_tax
+                elif state.state_name == 'New York':
+                    if selling_price * amount > 110:
+                        tax = state.state_base_tax
+                elif state.state_name == 'Rhode Island':
+                    if selling_price * amount > 250:
+                        tax = state.state_base_tax
+
             zysk = round(amount * (selling_price - product_price * (1 + tax)) / (1 + tax), 4)
             list_of_calculation_holders.append(
                 CalculationsHolder(state=state_name,
