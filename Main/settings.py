@@ -26,7 +26,7 @@ SECRET_KEY = '18p)g15efik%#_*zg9vxom+3c0o5jspwpcz11ff*a)5a&n#u62'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['snapeeek.pythonanywhere.com']
 
 
 # Application definition
