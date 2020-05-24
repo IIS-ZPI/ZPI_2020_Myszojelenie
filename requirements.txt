@@ -1,4 +1,0 @@
-django
-gunicorn
-django-heroku
-django_select2
