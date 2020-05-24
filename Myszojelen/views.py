@@ -27,23 +27,24 @@ def index(request):
             if state.exists():
                 tax = state[0].tax_val
                 state_name = state[0].id_state.state_name
-
+                basetax = state[0].id_state.state_base_tax
             else:
                 stan = State.objects.get(id=int(stateid))
                 state_name = stan.state_name
                 tax = stan.state_base_tax
+                basetax = tax
             category = Category.objects.get(id=int(data.get('id_cat')))
 
             if category.category_name == 'Clothing':
-                if state.state_name == 'Massachusetts':
+                if state_name == 'Massachusetts':
                     if selling_price * amount > 175:
-                        tax = state.state_base_tax
-                elif state.state_name == 'New York':
+                        tax = basetax
+                elif state_name == 'New York':
                     if selling_price * amount > 110:
-                        tax = state.state_base_tax
-                elif state.state_name == 'Rhode Island':
+                        tax = basetax
+                elif state_name == 'Rhode Island':
                     if selling_price * amount > 250:
-                        tax = state.state_base_tax
+                        tax = basetax
 
             zysk = round(amount * (selling_price - product_price * (1 + tax)) / (1 + tax), 4)
             list_of_calculation_holders.append(
