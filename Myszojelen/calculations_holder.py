@@ -6,8 +6,9 @@ class CalculationsHolder:
     product_unit_price = None
     product_selling_price = None
     calculated_price = None
+    amount = None
 
-    def __init__(self, state, cat, pronam, prounipr, proselpri, calpri):
+    def __init__(self, state, cat, pronam, prounipr, proselpri, calpri, amount):
         super().__init__()
         self.state_name = state
         self.category_name = cat
@@ -15,6 +16,7 @@ class CalculationsHolder:
         self.product_unit_price = prounipr
         self.product_selling_price = proselpri
         self.calculated_price = calpri
+        self.amount = amount
 
     def __str__(self) -> str:
         return "Stan: " + self.state_name + " Kategoria: " + self.category_name + " Produkt: " + self.product_name + "Cena jednostkowa: " + self.product_unit_price + " Cena sprzedaży: " + self.product_selling_price + " Wyliczona marża: " + self.calculated_price

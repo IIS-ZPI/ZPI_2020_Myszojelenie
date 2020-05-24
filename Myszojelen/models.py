@@ -23,6 +23,9 @@ class State_Category_Tax(models.Model):
     id_cat = models.ForeignKey(Category, related_name="Category+", on_delete=models.DO_NOTHING)
     id_state = models.ForeignKey(State, related_name="State+", on_delete=models.DO_NOTHING)
     tax_val = models.FloatField(default=State(id_state).state_base_tax)
+    # bool_czy jest wyjatek na tej categorii i tym stanie
+    # prog dla ktorego nie jest obliczany tax_val
+    tax_free = models.FloatField(default=0)
 
     def __str__(self):
         return "NAZWA STANU= " + self.id_state.state_name + " KATEGORIA= " + self.id_cat.category_name + " WARTOSC= " + self.tax_val.__str__()
