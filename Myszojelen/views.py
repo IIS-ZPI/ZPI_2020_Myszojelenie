@@ -8,7 +8,36 @@ list_of_calculation_holders = []
 
 
 def index(request):
+    return render(request, "Myszojelen/index.html")
+
+
+def adding_form(request):
+    forminfo = FormInfoHandlerModelForm
+    formprod = FormProductModelForm
+    formamount = FormAmountForm
     context = {
+        "forminfo": forminfo,
+        "formprod": formprod,
+        "formamout": formamount,
+    }
+    return render(request, 'Myszojelen/adding.html', context)
+
+
+def removerecord(request, pk):
+    if request.method == 'POST':
+        list_of_calculation_holders.pop(int(pk))
+    request.method = 'GET'
+    return addingAndTable(request)
+
+
+def addingAndTable(request):
+    forminfo = FormInfoHandlerModelForm
+    formprod = FormProductModelForm
+    formamount = FormAmountForm
+    context = {
+        "forminfo": forminfo,
+        "formprod": formprod,
+        "formamout": formamount,
         "display_list": list_of_calculation_holders,
     }
     if request.method == 'POST':
@@ -38,7 +67,6 @@ def index(request):
 
             category = Category.objects.get(id=int(data.get('id_cat')))
 
-
             zysk = round(amount * (selling_price - product_price * (1 + tax)) / (1 + tax), 4)
             list_of_calculation_holders.append(
                 CalculationsHolder(state=state_name,
@@ -54,23 +82,4 @@ def index(request):
     for element in list_of_calculation_holders:
         element.setid(iter_helper)
         iter_helper += 1
-    return render(request, "Myszojelen/index.html", context)
-
-
-def adding_form(request):
-    forminfo = FormInfoHandlerModelForm
-    formprod = FormProductModelForm
-    formamount = FormAmountForm
-    context = {
-        "forminfo": forminfo,
-        "formprod": formprod,
-        "formamout": formamount,
-    }
-    return render(request, 'Myszojelen/adding.html', context)
-
-
-def removerecord(request, pk):
-    if request.method == 'POST':
-        list_of_calculation_holders.pop(int(pk))
-    request.method = 'GET'
-    return index(request)
+    return render(request, 'Myszojelen/addingAndTable.html', context)

@@ -7,7 +7,7 @@
     </script>
     {{ forminfo.media.js }}
     {{ forminfo.media.css }}
-    <form action="/" method="POST">
+    <form action="/table/" method="POST">
         {% csrf_token %}
         <table class="table">
             {{ forminfo.as_table }}
