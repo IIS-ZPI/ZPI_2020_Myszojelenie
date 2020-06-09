@@ -16,7 +16,7 @@ class FormInfoHandlerModelForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(FormInfoHandlerModelForm, self).__init__(*args, **kwargs)
         self.fields['id_state'].label = "Stany"
-        self.fields['selling_price'].label = "Za ile chcesz sprzedac jedna sztuke"
+        self.fields['selling_price'].label = "Za ile chcesz sprzedac jedna sztuke [w $]"
 
 
 class FormProductModelForm(ModelForm):
@@ -26,7 +26,7 @@ class FormProductModelForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(FormProductModelForm, self).__init__(*args, **kwargs)
-        self.fields['product_price'].label = "Cena produktu"
+        self.fields['product_price'].label = "Cena produktu [w $]"
         self.fields['id_cat'].label = "Kategoria produktu"
         self.fields['product_name'].label = "Nazwa produktu"
 
