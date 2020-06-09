@@ -16,7 +16,7 @@ class State(models.Model):
     state_base_tax = models.FloatField(validators=[MinValueValidator(0)])
 
     def __str__(self):
-        return self.state_name + " " + (round(self.state_base_tax * 100,2)).__str__() + "%"
+        return self.state_name + " " + "- Podatek podstawowy: " + (round(self.state_base_tax * 100, 2)).__str__() + "%"
 
 
 class State_Category_Tax(models.Model):
