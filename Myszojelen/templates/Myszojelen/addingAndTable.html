@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+            $('#sortabletable').DataTable();
+        });
+    </script>
+    {{ forminfo.media.js }}
+    {{ forminfo.media.css }}
+    <form action="/table/" method="POST">
+        {% csrf_token %}
+        <table class="table" style="margin-top: 2%">
+            {{ forminfo.as_table }}
+            {{ formprod.as_table }}
+            {{ formamout.as_table }}
+        </table>
+        <input type="submit" class="btn btn-success" value="Dodaj nowy produkt do tabeli">
+    </form>
+     <br>
+         <div class="panel-heading" style="font-size: 14px">
+            <h1>* Wszystkie pola są wymagane</h1>
+         </div>
+         <br>
+    <table id="sortabletable" class="table table-striped table-bordered table-sm">
+        <thead>
+        <tr>
+            <th>Stan</th>
+            <th>Kategoria</th>
+            <th>Produkt</th>
+            <th>Cena jednostkowa</th>
+            <th>Cena sprzedaży</th>
+            <th>Zysk</th>
+            <th>Ilość</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for element in display_list %}
+            <tr>
+                <td>{{ element.state_name }}</td>
+                <td>{{ element.category_name }}</td>
+                <td>{{ element.product_name }}</td>
+                <td>{{ element.product_unit_price }}$</td>
+                <td>{{ element.product_selling_price }}$</td>
+                <td>{{ element.calculated_price }}$</td>
+                <td>{{ element.amount }}</td>
+                <td>
+                    <form action="/removed/{{ element.id }}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Usun" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div style="margin-bottom: 2%"></div>
+
+{% endblock %}
