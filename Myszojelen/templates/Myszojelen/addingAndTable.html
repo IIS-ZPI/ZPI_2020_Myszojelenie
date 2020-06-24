@@ -8,7 +8,7 @@
     </script>
     {{ forminfo.media.js }}
     {{ forminfo.media.css }}
-    <form action="/table/" method="POST">
+    <form action="/table/" method="POST",style="background-color: yellow">
         {% csrf_token %}
         <table class="table" style="margin-top: 2%">
             {{ forminfo.as_table }}
@@ -22,7 +22,7 @@
             <h1>* Wszystkie pola są wymagane</h1>
          </div>
          <br>
-    <table id="sortabletable" class="table table-striped table-bordered table-sm">
+    <table id="sortabletable" class="table table-striped table-bordered table-sm",style="background-color: yellow">
         <thead>
         <tr>
             <th>Stan</th>
